@@ -35,7 +35,24 @@ function Basket(basketInput) {
         } else {
             basket.push({ sku, quantity: 1 });
         }
-        console.log(basket);
+
+        calculatePrices();
+    }
+
+    function calculatePrices() {
+        let pricedBasket = basket.map(item => {
+            const product = products.find(prod => prod.sku === item.sku);
+            let itemPrice = 0;
+            if (product.specialPrice) {
+                itemPrice = Math.floor(item.quantity / product.specialPrice.quantity) * product.specialPrice.unitPrice;
+                itemPrice += (item.quantity % product.specialPrice.quantity) * product.unitPrice;
+            } else {
+                itemPrice = item.quantity * product.unitPrice;
+            }
+            item.totalPrice = itemPrice
+            return item;
+        })
+        console.log(pricedBasket);
     }
 
     return {
