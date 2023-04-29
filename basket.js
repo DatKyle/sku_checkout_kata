@@ -25,7 +25,7 @@ const products = [
     }
 ];
 
-function Basket(basketInput, renderBasket) {
+function Basket(basketInput, renderBasket, renderTotalPrice) {
     const basket = basketInput;
 
     function add(sku) {
@@ -40,6 +40,7 @@ function Basket(basketInput, renderBasket) {
     }
 
     function calculatePrices() {
+        let totalPrice = 0;
         let pricedBasket = basket.map(item => {
             const product = products.find(prod => prod.sku === item.sku);
             let itemPrice = 0;
@@ -52,8 +53,11 @@ function Basket(basketInput, renderBasket) {
             item.totalPrice = itemPrice
             return item;
         })
+        
+        pricedBasket.forEach(item => totalPrice += item.totalPrice);
 
         renderBasket(pricedBasket);
+        renderTotalPrice(totalPrice)
     }
 
     return {

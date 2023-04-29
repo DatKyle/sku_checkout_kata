@@ -4,6 +4,7 @@ window.addEventListener("load", (event) => {
     let skuInput = document.getElementById("sku-input");
     let skuAddButton = document.getElementById("sku-button");
     let basketItemsElement = document.getElementById("items");
+    let totalPriceElement = document.getElementById("totalPrice");
 
     function renderBasket(basket = []) {
         let basketHtml = basket.map(item =>`
@@ -16,7 +17,11 @@ window.addEventListener("load", (event) => {
         basketItemsElement.innerHTML = basketHtml.join("\n");
     }
 
-    basketService = new Basket([], renderBasket);
+    function renderTotalPrice(totalPrice) {
+        totalPriceElement.innerText = totalPrice;
+    }
+
+    basketService = new Basket([], renderBasket, renderTotalPrice);
 
     skuInput.addEventListener("keyup", (event) => {
         if (event.key.toLowerCase() === "enter")
