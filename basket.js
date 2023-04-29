@@ -24,3 +24,21 @@ const products = [
         unitPrice: 15
     }
 ];
+
+function Basket(basketInput) {
+    const basket = basketInput;
+
+    function add(sku) {
+        let foundItem = basket.find(item => item.sku === sku.toLowerCase())
+        if (foundItem) {
+            foundItem.quantity += 1;
+        } else {
+            basket.push({ sku, quantity: 1 });
+        }
+        console.log(basket);
+    }
+
+    return {
+        add: add
+    }
+}
