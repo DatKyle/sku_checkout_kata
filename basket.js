@@ -25,7 +25,7 @@ const products = [
     }
 ];
 
-function Basket(basketInput) {
+function Basket(basketInput, renderBasket) {
     const basket = basketInput;
 
     function add(sku) {
@@ -52,7 +52,8 @@ function Basket(basketInput) {
             item.totalPrice = itemPrice
             return item;
         })
-        console.log(pricedBasket);
+
+        renderBasket(pricedBasket);
     }
 
     return {
