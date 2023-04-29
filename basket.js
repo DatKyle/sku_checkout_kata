@@ -25,10 +25,15 @@ const products = [
     }
 ];
 
-function Basket(basketInput, renderBasket, renderTotalPrice) {
+function Basket(basketInput, renderBasket, renderTotalPrice, renderError) {
     const basket = basketInput;
 
     function add(sku) {
+        if(!products.find(product => product.sku === sku)){
+            renderError("invalid product.");
+            return;
+        }
+
         let foundItem = basket.find(item => item.sku === sku.toLowerCase())
         if (foundItem) {
             foundItem.quantity += 1;

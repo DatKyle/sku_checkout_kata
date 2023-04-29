@@ -5,9 +5,14 @@ window.addEventListener("load", (event) => {
     let skuAddButton = document.getElementById("sku-button");
     let basketItemsElement = document.getElementById("items");
     let totalPriceElement = document.getElementById("totalPrice");
+    let errorElement = document.getElementById("error");
+
+    function renderError(errorMessage) {
+        errorElement.innerText = errorMessage;
+    }
 
     function renderBasket(basket = []) {
-        let basketHtml = basket.map(item =>`
+        let basketHtml = basket.map(item => `
         <tr>
             <td>${item.sku}</td>
             <td>${item.quantity}</td>
@@ -21,21 +26,21 @@ window.addEventListener("load", (event) => {
         totalPriceElement.innerText = totalPrice;
     }
 
-    basketService = new Basket([], renderBasket, renderTotalPrice);
+    basketService = new Basket([], renderBasket, renderTotalPrice, renderError);
 
     skuInput.addEventListener("keyup", (event) => {
         if (event.key.toLowerCase() === "enter")
             if (skuInput.value !== "")
                 basketService.add(skuInput.value);
             else
-                console.log("please enter a SKU.")
+                renderError("please enter a SKU.")
     });
 
     skuAddButton.addEventListener("click", (event) => {
         if (skuInput.value !== "")
             basketService.add(skuInput.value);
         else
-            console.log("please enter a SKU.")
+            renderError("please enter a SKU.")
     });
 
 });
