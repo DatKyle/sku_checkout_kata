@@ -1,15 +1,57 @@
-body{
+body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    padding-top: 20px;
+    padding-top: 3rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.container{
-    display: flex;
-    justify-content: center;
+/* 
+    Start of basket input styling
+*/
+
+.basket {
+    padding-left: 3rem;
 }
+
+.basket .input {
+    display: flex;
+    align-items: center;
+}
+
+.basket .input input {
+    border-style: solid;
+    border-color: gray;
+    border-width: 2px 1px 2px 2px;
+    border-radius: 1rem 0px 0px 1rem;
+    padding-left: 5px;
+
+    font-size: medium;
+    outline:none
+}
+
+.basket .input input:focus {
+    border-color: black; 
+}
+
+.basket .input button {
+    border-style: solid;
+    border-color: gray;
+    border-width: 2px 2px 2px 1px;
+    border-radius: 0px 1rem 1rem 0px;
+    padding-right: 5px;
+    width: 60px;
+
+    font-size: medium;
+}
+
+.basket .input button:hover {
+    border-color: black;
+}
+
+/* 
+    End of basket input styling
+*/
 
 /* 
     Start of error styling
