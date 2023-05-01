@@ -12,6 +12,7 @@ body {
 
 .basket {
     padding-left: 3rem;
+    width: 50%;
 }
 
 .basket .input {
@@ -53,6 +54,59 @@ body {
     End of basket input styling
 */
 
+/*
+    Start of basket table header styling
+*/
+
+.basket .pricing .table .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    margin-top: 20px;
+
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: black;
+}
+
+.basket .pricing .table .header p {
+    margin: 0;
+    margin-bottom: 2px;
+    padding-left: 10px;
+
+    font-weight: bold;
+}
+
+/*
+    End of basket table header styling
+*/
+
+/*
+    Start of basket table item styling
+*/
+
+.basket .pricing .table .item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: solid black 1px;
+}
+
+.basket .pricing .table .item:last-child{
+    border-bottom-width: 2px;
+}
+
+.basket .pricing .table .item p {
+    margin: 0;
+    padding: 5px 0px 5px 10px;
+}
+
+.basket .pricing .table .item p+p {
+    border-left: solid black 2px;
+}
+
+/* 
+    End of basket table item styling
+*/
 /* 
     Start of error styling
 */
@@ -73,6 +127,8 @@ body {
     border-style: none solid solid solid;
     border-bottom-right-radius: .75rem;
     border-bottom-left-radius: .75rem;
+
+    transition: 1s;
 }
 
 .error.hide {

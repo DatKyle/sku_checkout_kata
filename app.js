@@ -17,11 +17,11 @@ window.addEventListener("load", (event) => {
 
     function renderBasket(basket = []) {
         let basketHtml = basket.map(item => `
-        <tr>
-            <td>${item.sku}</td>
-            <td>${item.quantity}</td>
-            <td>${item.totalPrice}</td>
-        </tr>`);
+        <div class="item">
+            <p>${item.sku}</p>
+            <p>${item.quantity}</p>
+            <p>${item.totalPrice}</p>
+        </div>`);
 
         basketItemsElement.innerHTML = basketHtml.join("\n");
     }
