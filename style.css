@@ -11,6 +11,10 @@ body{
     justify-content: center;
 }
 
+/* 
+    Start of error styling
+*/
+
 .error {
     display: flex;
     justify-content: space-between;
@@ -43,3 +47,7 @@ body{
     user-select: none;
     width: 16px;
 }
+
+/* 
+    End of error styling
+*/
