@@ -107,6 +107,26 @@ body {
 /* 
     End of basket table item styling
 */
+
+/* 
+    Start of basket total styling
+*/
+
+.basket .pricing .total p {
+    margin: 0;
+    padding-top: 5px;
+    
+    font-weight: bold;
+}
+
+.basket .pricing .total p span {
+    font-weight: normal;
+}
+
+/* 
+    End of basket total styling
+*/
+
 /* 
     Start of error styling
 */
