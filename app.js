@@ -6,9 +6,13 @@ window.addEventListener("load", (event) => {
     let basketItemsElement = document.getElementById("items");
     let totalPriceElement = document.getElementById("totalPrice");
     let errorElement = document.getElementById("error");
+    let closeErrorElement = document.getElementById("closeError");
 
     function renderError(errorMessage) {
         errorElement.innerText = errorMessage;
+        console.log(errorElement.parentElement.classList);
+        
+        errorElement.parentElement.classList.remove("hide")
     }
 
     function renderBasket(basket = []) {
@@ -42,5 +46,9 @@ window.addEventListener("load", (event) => {
         else
             renderError("please enter a SKU.")
     });
+
+    closeErrorElement.addEventListener("click", () => {
+        errorElement.parentElement.classList.add("hide")
+    })
 
 });

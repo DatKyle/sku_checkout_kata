@@ -9,3 +9,37 @@ body{
     display: flex;
     justify-content: center;
 }
+
+.error {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    position: absolute;
+    top: 0px;
+    width: 250px;
+    height: 3rem;
+
+    overflow: hidden;
+    border-width: 0px 1px 1px 0px;
+    border-style: none solid solid none;
+    border-bottom-right-radius: .75rem;
+}
+
+.error.hide {
+    top: calc(-1px + -3rem);
+}
+
+.error.show {
+    text-overflow: ellipsis;
+}
+
+.error #error {
+    margin: auto 0px auto 5px;
+}
+
+.error #closeError {
+    margin: 5px 5px 0px 10px;
+    cursor: pointer;
+    user-select: none;
+}
