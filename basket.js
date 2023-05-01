@@ -30,7 +30,7 @@ function Basket(basketInput, renderBasket, renderTotalPrice, renderError) {
 
     function add(sku) {
         if(!products.find(product => product.sku === sku)){
-            renderError("invalid product.");
+            renderError("Invalid product.");
             return;
         }
 

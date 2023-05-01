@@ -33,7 +33,7 @@ window.addEventListener("load", (event) => {
             if (skuInput.value !== "")
                 basketService.add(skuInput.value);
             else
-                renderError("please enter a SKU.")
+                renderError("Please enter a SKU.")
     });
 
     skuAddButton.addEventListener("click", (event) => {
