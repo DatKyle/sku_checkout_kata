@@ -28,11 +28,11 @@ body {
     padding-left: 5px;
 
     font-size: medium;
-    outline:none
+    outline: none;
 }
 
 .basket .input input:focus {
-    border-color: black; 
+    border-color: black;
 }
 
 .basket .input button {
@@ -91,7 +91,7 @@ body {
     border-bottom: solid black 1px;
 }
 
-.basket .pricing .table .item:last-child{
+.basket .pricing .table .item:last-child {
     border-bottom-width: 2px;
 }
 
@@ -115,7 +115,7 @@ body {
 .basket .pricing .total p {
     margin: 0;
     padding-top: 5px;
-    
+
     font-weight: bold;
 }
 
