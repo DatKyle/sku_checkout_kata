@@ -3,6 +3,7 @@ body{
     margin: 0;
     padding: 0;
     padding-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container{
@@ -17,13 +18,15 @@ body{
 
     position: absolute;
     top: 0px;
+    right: 20px;
     width: 250px;
     height: 3rem;
 
     overflow: hidden;
-    border-width: 0px 1px 1px 0px;
-    border-style: none solid solid none;
+    border-width: 0px 1px 1px 1px;
+    border-style: none solid solid solid;
     border-bottom-right-radius: .75rem;
+    border-bottom-left-radius: .75rem;
 }
 
 .error.hide {
