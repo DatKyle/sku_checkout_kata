@@ -30,16 +30,13 @@ body{
     top: calc(-1px + -3rem);
 }
 
-.error.show {
-    text-overflow: ellipsis;
-}
-
-.error #error {
+.error .message {
     margin: auto 0px auto 5px;
 }
 
-.error #closeError {
+.error .close {
     margin: 5px 5px 0px 10px;
     cursor: pointer;
     user-select: none;
+    width: 16px;
 }
